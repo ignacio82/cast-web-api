@@ -1,0 +1,24 @@
+name: cast-web-api
+version: '1.0'
+summary: Control your Google Cast devices.
+description: >
+  See what's currently playing pause, play, set the volume and more, all from the SmartThings app. Quickly play your favourite content through presets.
+  Check if the daemon is running:
+    $ snap services cast-web-api
+  restart:
+    $ snap restart cast-web-api
+
+grade: stable
+confinement: strict
+
+parts:
+  cast-web-api:
+    plugin: nodejs
+    node-packages:
+      - cast-web-api 
+    source: .
+
+apps:
+  cast-web-api:
+    command: cast-web-api
+    daemon: simple
