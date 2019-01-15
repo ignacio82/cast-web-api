@@ -22,3 +22,4 @@ apps:
   cast-web-api:
     command: cast-web-api
     daemon: simple
+    plugs: [network, network-bind]
